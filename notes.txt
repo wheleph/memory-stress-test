@@ -5,4 +5,4 @@ curl -X POST http://localhost:8080/fill?size=811222330
 
 docker build -t memory-stress .
 
-docker run -it -p 8080:8080 -p 9010:9010 -m 1024m --name memory-test --rm  --entrypoint 'java' memory-stress:latest  -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=9010 -Dcom.sun.management.jmxremote.rmi.port=9010 -Djava.rmi.server.hostname=Z10325.local -Dcom.sun.management.jmxremote.ssl=false -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.local.only=false -jar /home/memory-stress/service.jar
+docker run -it -p 8080:8080 -p 9010:9010 -m 1024m --name memory-stress --rm  --entrypoint 'java' memory-stress:latest  -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=9010 -Dcom.sun.management.jmxremote.rmi.port=9010 -Djava.rmi.server.hostname=Z10325.local -Dcom.sun.management.jmxremote.ssl=false -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.local.only=false -jar /home/memory-stress/service.jar
