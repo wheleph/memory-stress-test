@@ -1,5 +1,6 @@
 package com.procore.memorystress;
 
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -21,5 +22,10 @@ public class MemoryStressController {
         }
 
         return "Done. Size: " + byteBuffer.size() + "\n";
+    }
+
+    @GetMapping("/value")
+    public String getValue(@RequestParam("index") int index) {
+        return "Value: " + byteBuffer.get(index) + "\n";
     }
 }
