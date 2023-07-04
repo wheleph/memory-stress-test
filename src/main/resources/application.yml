@@ -1,0 +1,9 @@
+management:
+  endpoints:
+    web:
+      exposure:
+        #also, "metrics" can be included to show metrics under /actuator/metrics, but nowhere near production, since it can be a security vulnerability
+        include: health, info, metrics
+    jmx:
+      exposure:
+        include: health, info, metrics
