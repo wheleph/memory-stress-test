@@ -17,7 +17,7 @@ public class MemoryStressController {
     public String fillMemory(@RequestParam("size") long size) {
         byteBuffer.clear();
 
-        for (int i = 0; i < size; i++) {
+        for (long i = 0; i < size; i++) {
             byteBuffer.add((byte) (i % 100));
         }
 
